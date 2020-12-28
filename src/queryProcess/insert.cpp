@@ -34,13 +34,19 @@ namespace dbplus{
             sequance.push_back(strings[i]);
         }
 
-        /*
+      
+    }
 
-        for ( auto it = t.begin(); it != t.end(); ++it )
-             std::cout << " " << *it;
-             */
-
-        
+    bool insertInToDatabase(string info)
+    {
+        ofstream file;
+            file.open("database.db",ios::out | ios::app);
+            if(!file.is_open())return false;
+            
+            file<<info<<"\n";
+            
+            file.close();
+            return true;
     }
     
     void fillstatementcolumns(const hsql::InsertStatement* stmt, unordered_set<string> & t)
@@ -124,7 +130,8 @@ namespace dbplus{
                 }
              }
          
-         cout<<info;
+         if(insertInToDatabase(info)) cout<<"1 row inserted\n";
+         else cout<<"error: failed to insertion\n";
 
         }
 
