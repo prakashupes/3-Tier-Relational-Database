@@ -17,7 +17,7 @@ namespace dbplus{
 
     void printCell(string str){
         int i=0;
-        for( i=0;i<15;i++)
+        for( i=0;i<13;i++)
             {
              if(i<str.size())
             {
@@ -25,10 +25,21 @@ namespace dbplus{
             }
             else cout<<" ";
             }
+            cout<<"|";
 
 
 }
+
+void printIndent(int size){
+    for(int i=1;i<=size*14;i++){
+        if(i%14==0)cout<<"+";
+        else cout<<"-";
+    }
+    cout<<endl;
+
+}
     void printResult(vector<string> columns,string table){
+        int rows=0;
 
         for(auto x: columns)
         {
@@ -36,7 +47,7 @@ namespace dbplus{
             
         }
         cout<<endl;
-
+        printIndent(columns.size());
         string file_name="database.db";
     
         ifstream file;
@@ -49,6 +60,7 @@ namespace dbplus{
 		    strings = split(str,' ');
             if(strings[0]==table)
             {
+                rows++;
                 for(int i=1;i<strings.size();i++)
                 {
                     
@@ -60,18 +72,20 @@ namespace dbplus{
 
             strings.clear();
 	    }
+        cout<<"("<<rows<<" rows)"<<endl;
         file.close();
     }
 
     void printResult(vector<string> columns,vector<string> exist_columns,string table){
 
+        int rows=0;
         for(auto x: columns)
         {
             printCell(x);
             
         }
         cout<<endl;
-
+        printIndent(columns.size());
         string file_name="database.db";
     
         ifstream file;
@@ -84,6 +98,7 @@ namespace dbplus{
 		    values = split(str,' ');
             if(values[0]==table)
             {
+                rows++;
                 int j=0;
                 for(int i=1;i<values.size();i++)
                 {
@@ -99,12 +114,14 @@ namespace dbplus{
 
             values.clear();
 	    }
+        cout<<"("<<rows<<" rows)"<<endl;
         file.close();
     }
 
 
     void fillTableColumns(string table,vector<string> &sequance)
     {
+        
         string file_name="table.db";
     
         ifstream file;
