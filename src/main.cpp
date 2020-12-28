@@ -21,10 +21,10 @@ int main() {
     string query;
     string err_msg;
     
-    cout<<"Runnig databse DBplus>>\nTo exit from database type q or quit \nFor any kind of help type help \n\n";
+    cout<<"Runnig databse DBplus>>\nTo exit from database type q or quit \nFor help type help \n\n";
     while (1)
     {
-        cout<<"DBplus -: ";
+        cout<<"DBplus-: ";
         getline(cin,query);
         if(query=="q" || query=="quit") exit(1);
         if(query.size()<1) continue;
@@ -33,6 +33,7 @@ int main() {
             help();
             continue;
         }
+        
 
        hsql::SQLParserResult result;
        dbplus::ValidateQuery validateQuery;
