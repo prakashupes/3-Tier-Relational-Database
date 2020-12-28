@@ -41,6 +41,7 @@ namespace dbplus{
             if(valid.existTable(table))
             {
               cout<<"Error: Table already exist : "<<table<<endl;
+              cout<<endl;
               return;
               
             }
@@ -63,7 +64,7 @@ namespace dbplus{
 
       //insert the table name into table index
       insertTableIndex(info,table);
-      cout<<"Table Created"<<endl;
+      cout<<"Table Created\n"<<endl;
     }
     
     

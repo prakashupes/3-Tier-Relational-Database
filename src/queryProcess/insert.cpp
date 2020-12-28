@@ -62,6 +62,7 @@ namespace dbplus{
             if(!valid.existTable(table))
             {
               cout<<"Error: Table Not exist : "<<table<<endl;
+              cout<<endl;
               return;
               
             }
@@ -130,8 +131,8 @@ namespace dbplus{
                 }
              }
          
-         if(insertInToDatabase(info)) cout<<"1 row inserted\n";
-         else cout<<"error: failed to insertion\n";
+         if(insertInToDatabase(info)) cout<<"1 row inserted\n"<<endl;
+         else cout<<"error: failed to insertion\n"<<endl;
 
         }
 
