@@ -1,0 +1,21 @@
+DBPlus: Relation Database with Minimal Functionality ,Open Source Project
+GNU-GPL Licensed
+
+./DBPlus        :       connect to global database
+-q or -quit     :       quit from database
+-help           :       help
+-f or -function :       to enter in database shortcuts
+    
+    shortcuts:
+    -t or -table:  total num of table
+    -tl or -list:  list of tables
+    -tv or -view:  to view all table structrues
+    
+
+@Support:
+All SQL Queries Parsed And Syntax check successfully
+Limited Queries Supported for database!!
+(Insert,Create,Drop,Delete,Update,Select)
+
+@developer
+Prakash,Akshit,Gaurav
