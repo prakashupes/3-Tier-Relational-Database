@@ -105,10 +105,27 @@ namespace dbplus{
             }
          }
 
+         else
+         {
+             if(values.size()!=sequance.size())
+             {
+                 cout<<"eroor: Column mismatch; column info not provided\n";
+                 return;
+             }
+
+             else
+             {
+                 for(int i=0;i<sequance.size();i++)
+              {
+                
+                    info+=values[i]+" ";
+                    
+                }
+                }
+             }
+         
          cout<<info;
 
-    
         }
-        
 
 }
