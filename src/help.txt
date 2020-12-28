@@ -17,5 +17,8 @@ All SQL Queries Parsed And Syntax check successfully
 Limited Queries Supported for database!!
 (Insert,Create,Drop,Delete,Update,Select)
 
-@developer
-Prakash,Akshit,Gaurav
++----------------------------------------------------+
+|@developer Contact                            UPES  |
+|Prakash,Akshit,Gaurav                               |
+|85prakas20172@gmail.com                             |
++----------------------------------------------------+
