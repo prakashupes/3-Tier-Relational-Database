@@ -38,7 +38,7 @@ void ExecuteQuery::executeQuery(hsql::SQLParserResult &result)
             break;
             case kStmtSelect:
                 Select select;
-                //select.selectStatement((const SelectStatement*) stmt);
+                select.selectStatement((const SelectStatement*) stmt);
             break;
             case kStmtInsert:
                 Insert insert;
