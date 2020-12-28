@@ -4,6 +4,7 @@
 #include<fstream>
 #include "../include/select.hpp"
 #include"../util/util.hpp"
+#include "../include/validateQuery.hpp"
 #include "/usr/local/include/hsql//sql/statements.h"
 using namespace std;
 using namespace hsql;
@@ -154,6 +155,16 @@ void printIndent(int size){
         bool all_field=false;
 
         my_printSelectStatementInfo(table,columns,stmt,all_field); //extract feilds from stmt
+
+        ValidateQuery valid;
+
+            if(!valid.existTable(table))
+            {
+              cout<<"Error: Table Not exist : "<<table<<endl;
+              cout<<endl;
+              return;
+              
+            }
         fillTableColumns(table,exist_columns);
 
          if(all_field)
