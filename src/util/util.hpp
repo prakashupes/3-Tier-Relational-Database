@@ -6,7 +6,7 @@
 using namespace std;
 vector <string> split(const string &str, char del);
 void toUpper(string& su);
-
+void help();
 
 
 
