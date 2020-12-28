@@ -12,7 +12,7 @@ namespace dbplus{
     class Select{
 
         public:
-        void selectStatement(const hsql::CreateStatement* create_stmt);
+        void selectStatement(const hsql::SelectStatement* stmt);
         
         
     };

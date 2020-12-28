@@ -1,8 +1,12 @@
 #include <string>
+#include <iostream>
 #include "../include/executeQuery.hpp"
 #include "../include/global.hpp"
 #include "../include/create.hpp"
-#include <iostream>
+#include "../include/insert.hpp"
+#include "../include/select.hpp"
+#include "../include/update.hpp"
+#include "../include/delete.hpp"
 using namespace std;
 using namespace hsql;
 using namespace dbplus;
@@ -33,10 +37,12 @@ void ExecuteQuery::executeQuery(hsql::SQLParserResult &result)
             
             break;
             case kStmtSelect:
-                cout<<"Select ";
+                Select select;
+                select.selectStatement((const SelectStatement*) stmt);
             break;
             case kStmtInsert:
-     
+                Insert insert;
+                insert.insertStatement((const InsertStatement*) stmt);
             break;
     
             case kStmtUpdate:

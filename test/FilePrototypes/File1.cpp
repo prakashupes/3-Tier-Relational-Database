@@ -233,8 +233,6 @@ int main()
     cout<<str<<endl;
     cout<<file.tellg()<<endl;
     //cout<<file.tellp()<<endl;
-    
-    
-    
+  
 
 }
