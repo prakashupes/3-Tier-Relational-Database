@@ -2,3 +2,47 @@ create table abc(emd varchar notnull primary key); //only valid
 create table abc(emd varchar notnull primary key);
 create  abc(emd varchar notnull primary key);
 table abc (emd varchar notnull primary key) create ;
+
+
+INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country) VALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway');
+
+CREATE TABLE Persons (PersonID int, LastName varchar(255),FirstName varchar(255), Address varchar(255), City varchar(255));
+UPDATE Customers SET ContactName='Juan'  Country='Mexico';
+
+insert into EmpDtl2 select * from EmpDtl1;
+
+CREATE TABLE Persons (PersonID it, LastName varchar(255),FirstName varchar(255), Address varchar(255), City varchar(255));
+
+SELECT * FROM Customers WHERE CustomerID=1;
+
+CREATE TABLE Customer (PersonID int not null, LastName varchar(255),FirstName varchar(255), Address varchar(255), City varchar(255), email varchar(255), mobile varchar(255), city varchar(255));
+
+
+INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country) VALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway');
+
+CREATE TABLE Customers (CustomerName varchar(25), ContactName varchar(255), Address varchar(255), City varchar(255), PostalCode int not null, Country varchar(255));
+
+
+INSERT INTO Customers (CustomerName,  Address, City, PostalCode, Country) VALUES ('Cardinal',  'Skagen-21', 'Stavanger', '4006', 'Norway');
+
+
+select * from Customers where id 5;
+
+select CustomerName, Address from Customers;
+
+select CustomerName, Address from Customers where id=123;
+
+select CustomerName, Address from Customers ;
+
+
+//runtime errors insert into
+
+INSERT INTO Customers (CustomerName,  Address, City, PostalCode, Country) VALUES ('Cardinal',  'Skagen-21', 'Stavanger', '4006', 'Norway','121','12');
+ it should not be inserted for:
+
+CREATE TABLE Customers (CustomerName varchar(25), ContactName varchar(255), Address varchar(255), City varchar(255), PostalCode int not null, Country varchar(255));
+
+
+
+
+
