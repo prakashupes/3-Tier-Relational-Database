@@ -9,7 +9,126 @@ using namespace std;
 using namespace hsql;
 namespace dbplus{
 
+    void my_printExpression(Expr* expr, vector<string> &columns,bool &all_field) ;
+    void  my_printSelectStatementInfo(string &table,vector<string> &columns, const hsql::SelectStatement* stmt, bool &all_field);
+    void my_printOperatorExpression(Expr* expr, uintmax_t numIndent);
+    void my_printTableRefInfo(TableRef* table, string &tableName);
     
+
+    void printCell(string str){
+        int i=0;
+        for( i=0;i<15;i++)
+            {
+             if(i<str.size())
+            {
+             cout<<str[i];
+            }
+            else cout<<" ";
+            }
+
+
+}
+    void printResult(vector<string> columns,string table){
+
+        for(auto x: columns)
+        {
+            printCell(x);
+            
+        }
+        cout<<endl;
+
+        string file_name="database.db";
+    
+        ifstream file;
+        file.open(file_name);
+        if(!file.is_open())cout<<"error"<<endl;
+        string str;
+        vector<string> strings;
+	    while(getline(file,str))
+	    {
+		    strings = split(str,' ');
+            if(strings[0]==table)
+            {
+                for(int i=1;i<strings.size();i++)
+                {
+                    
+                    printCell(strings[i]);
+                   
+                }
+                cout<<endl;
+            }
+
+            strings.clear();
+	    }
+        file.close();
+    }
+
+    void printResult(vector<string> columns,vector<string> exist_columns,string table){
+
+        for(auto x: columns)
+        {
+            printCell(x);
+            
+        }
+        cout<<endl;
+
+        string file_name="database.db";
+    
+        ifstream file;
+        file.open(file_name);
+        if(!file.is_open())cout<<"error"<<endl;
+        string str;
+        vector<string> values;
+	    while(getline(file,str))
+	    {
+		    values = split(str,' ');
+            if(values[0]==table)
+            {
+                int j=0;
+                for(int i=1;i<values.size();i++)
+                {
+                    if(exist_columns[i-1]==columns[j])
+                    {
+                        printCell(values[i]);
+
+                        j++;
+                    }
+                }
+                cout<<endl;
+            }
+
+            values.clear();
+	    }
+        file.close();
+    }
+
+
+    void fillTableColumns(string table,vector<string> &sequance)
+    {
+        string file_name="table.db";
+    
+        ifstream file;
+        file.open(file_name);
+        if(!file.is_open())cout<<"error"<<endl;
+        string str;
+        vector<string> strings;
+	    while(getline(file,str))
+	    {
+		    strings = split(str,' ');
+            if(strings[0]==table) break;
+
+            strings.clear();
+	    }
+        file.close();
+        for(int i=1;i<strings.size();i+=4)
+        {
+            
+            sequance.push_back(strings[i]);
+        }
+
+      
+    }
+
    //main
     void Select::selectStatement(const hsql::SelectStatement* stmt)
     {
