@@ -1,4 +1,6 @@
-# DB+: Relational Database With Minimal Functionality
+# DBPlus:Relational Database With Minimal Functionality
+<img src="https://user-images.githubusercontent.com/44925217/99139350-ddcdd400-265d-11eb-8549-bf582012f916.png" width= "150" height ="150" />
+
 
 ### All the work reliy on the develop branch
 ### GUIDELINES of Contribution:
