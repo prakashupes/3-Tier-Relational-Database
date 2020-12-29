@@ -24,3 +24,6 @@
  ```
  git fetch upstream
  ```
+ 
+ ### Steps to run the project:
+ 
