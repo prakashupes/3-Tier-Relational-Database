@@ -49,7 +49,8 @@ void ExecuteQuery::executeQuery(hsql::SQLParserResult &result)
      // cout<<"Tbale name" <<((const UpdateStatement *) stmt)->tableName;
             break;
             case kStmtDelete:
-      
+            	cout<<"Table Deleted \n"
+     ; 
             break;
    
             default:
